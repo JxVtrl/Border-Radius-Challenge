@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* GLOBAL =================================== */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: azure;
+    
+    position: fixed;
+    
+    width: 100vw;
+    height: 100vh;
+}
+
+/* HEADER =================================== */
+
+
+header{
+    background-color: #f5f5f5;
+
+    display: flex;
+    align-items: center;
+
+    width: 100vw;
+    height: 85px;
+}
+
+header div{
+    background-color: rgb(42, 165, 122);
+    margin: auto;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
+    height: 40px;
+    width: min(60vh, 300px);
+    
+    border-radius: 10px;
+}
+
+.header-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    cursor: pointer;
+
+    padding: 0 15px;
+    border-radius: 10px;
+
+    transition: all 0.42s ease-in-out;
+}
+
+.header-section:hover{
+    background-color: #f5f5f5;
+}
+
+.active{
+    background-color: #f5f5f5;
+}
+
+
+
+
+/* MAIN =================================== */
+
+main{
+    background-color: white;
+    
+    width: 70vw;
+    height: fit-content;
+    
+    margin: 25px auto;    
+}
+
+#display-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    background-color: rgb(0, 255, 8);
+    
+    width:240px;
+    height:240px;
+
+    margin: auto;
+    padding: 20px;
+}
+
+.box-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.box-section div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
