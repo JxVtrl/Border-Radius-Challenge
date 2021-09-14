@@ -103,7 +103,8 @@ main{
 
     margin: auto;
     
-    padding: 20px;
+    padding: 45px;
+    overflow: hidden;
 }
 
 .box-section{
@@ -149,7 +150,4 @@ main{
 
 #range-section-1{
     margin-top: 20px;
-    
-    
-
 }
