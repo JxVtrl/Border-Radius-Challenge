@@ -25,38 +25,67 @@
         <div id="display-box">
             <section class="box-section">
                 <div>
-                    <span id="top-left">0</span>
-                    <p>Top Left</p>
+                    <span id="top-left" class="all-variable">0px</span>
                 </div>
                 <div>
-                    <span id="top-right">0</span>
-                    <p>Top Right</p> 
+                    <span id="top-right" class="all-variable">0px</span> 
                 </div>
             </section>
             <section class="box-section">
                 <div>
-                    <span id="bottom-left">0</span>
-                    <p>Bottom Left</p> 
+                    <span id="bottom-left" class="all-variable">0px</span>
                 </div>
                 <div>
-                    <span id="bottom-right">0</span>
-                    <p>Bottom Right</p> 
+                    <span id="bottom-right" class="all-variable">0px</span>
                 </div>
             </section>
         </div>
         <div id="range-div">
             <section id="range-section-1" class="range-section inactive">
-                <input type="range" name="all-border" id="range-all" class="range" value="0">
+                <input  type="range" name="all-border" 
+                        id="range-all" class="range" 
+                        value="0" 
+                        onchange="allBorder(this.value)" 
+                        oninput="allBorder(this.value)"
+                        >
             </section>
             <section id="range-section-2" class="range-section inactive">
-                <input type="range" name="TL-BR-border" class="range" value="0">
-                <input type="range" name="TR-BL-border" class="range" value="0">
+                <input  type="range" name="TL-BR-border" 
+                        class="range" value="0"
+                        onchange="diagonalBorders1(this.value)"
+                        oninput="diagonalBorders1(this.value)"
+                    >
+
+                <input  type="range" name="TR-BL-border"
+                        class="range" value="0"
+                        onchange="diagonalBorders2(this.value)"
+                        oninput="diagonalBorders2(this.value)"
+                    >
             </section>
             <section id="range-section-3" class="range-section inactive">
-                <input type="range" name="top-left-border" class="range" value="0">
-                <input type="range" name="top-right-border" class="range" value="0">
-                <input type="range" name="bottom-left-border" class="range" value="0">
-                <input type="range" name="bottom-right-border" class="range" value="0">
+                <input  type="range" name="top-left-border"
+                        class="range" value="0"
+                        onchange="topLeft(this.value)"
+                        oninput="topLeft(this.value)"
+                    >
+
+                <input  type="range" name="top-right-border"
+                        class="range" value="0"
+                        onchange="topRight(this.value)"
+                        oninput="topRight(this.value)"
+                    >
+
+                <input  type="range" name="bottom-left-border"
+                        class="range" value="0"
+                        onchange="botLeft(this.value)"
+                        oninput="botLeft(this.value)"
+                    >
+
+                <input  type="range" name="bottom-right-border"
+                        class="range" value="0"
+                        onchange="botRight(this.value)"
+                        oninput="botRight(this.value)"
+                    >
             </section>
         </div>
     </main>
