@@ -1,64 +1,109 @@
 let caixa = document.getElementById('display-box')
+let copy = document.getElementById('copy-button')
 
-document.querySelectorAll('.header-section').forEach(function(item){
+// Menu Selection
+document.querySelectorAll('.header-section').forEach((item) => {
     item.addEventListener('click', (e) => {
-        document.querySelectorAll('.header-section').forEach(function(item){
-            item !== e.target ? item.classList.remove('active') : item.classList.add('active');
+        // Remove all selected Menu Itens
+        document.querySelectorAll('.header-section').forEach((item) => {
+            item !== e.target ? item.classList.remove('selected') : item.classList.add('selected');
         });
 
-        item.classList.toggle('active');
-        
-        if(item.id === 'header-section-1'){
-            document.querySelector('#range-section-1').classList.add('active2');
-            document.querySelector('#range-section-1').classList.remove('inactive');
-            document.querySelector('#range-section-2').classList.add('inactive');
-            document.querySelector('#range-section-3').classList.add('inactive');
-
+        // Reset all borders 
+        document.querySelectorAll('.all-variable').forEach((item) => {
+            item.innerHTML = '0px';
             caixa.style.borderRadius = 0;
 
-            document.querySelectorAll('.all-variable').forEach(function(item){
-                item.innerHTML = '0px';
+            // Reset all Range Input
+            document.querySelectorAll('.range').forEach((item) => {
+                item.value = 0;
             })
-        }
-        else if(item.id === 'header-section-2'){
-            document.querySelector('#range-section-1').classList.add('inactive');
-            document.querySelector('#range-section-2').classList.add('active2');
-            document.querySelector('#range-section-2').classList.remove('inactive');
-            document.querySelector('#range-section-3').classList.add('inactive');
+        })
 
-            caixa.style.borderRadius = 0;
-
-            document.querySelectorAll('.all-variable').forEach(function(item){
-                item.innerHTML = '0px';
-            })
-        }
-        else if(item.id === 'header-section-3'){
-            document.querySelector('#range-section-1').classList.add('inactive');
-            document.querySelector('#range-section-2').classList.add('inactive');
-            document.querySelector('#range-section-3').classList.remove('inactive');
-            document.querySelector('#range-section-3').classList.add('active2');
+        // Active selected
+        item.classList.toggle('selected');
+        if(item.id === 'section-1'){
+            //other
+            document.querySelector('#range-section-2').classList.add('hide');
+            document.querySelector('#range-section-3').classList.add('hide');
+            document.querySelector('#range-section-4').classList.add('hide');
             
-            caixa.style.borderRadius = 0;
+            //this
+            document.querySelector('#range-section-1').classList.add('active');
+            document.querySelector('#range-section-1').classList.remove('hide');
 
-            document.querySelectorAll('.all-variable').forEach(function(item){
-                item.innerHTML = '0px';
+            document.querySelectorAll('.normalbtn').forEach((item) => {
+                item.classList.add('normal');
+            })
+        }
+        else if(item.id === 'section-2'){
+            //other
+            document.querySelector('#range-section-1').classList.add('hide');
+            document.querySelector('#range-section-3').classList.add('hide');
+            document.querySelector('#range-section-4').classList.add('hide');
+            
+            //this
+            document.querySelector('#range-section-2').classList.add('active');
+            document.querySelector('#range-section-2').classList.remove('hide');
+
+            document.querySelectorAll('.normalbtn').forEach((item) => {
+                item.classList.add('normal');
+            })
+        }
+        else if(item.id === 'section-3'){
+            //other
+            document.querySelector('#range-section-1').classList.add('hide');
+            document.querySelector('#range-section-2').classList.add('hide');
+            document.querySelector('#range-section-4').classList.add('hide');
+
+            //this
+            document.querySelector('#range-section-3').classList.add('active');
+            document.querySelector('#range-section-3').classList.remove('hide');
+
+            document.querySelectorAll('.normalbtn').forEach((item) => {
+                item.classList.add('normal');
+            })
+        }
+        else if(item.id === 'section-4'){
+            //other
+            document.querySelector('#range-section-1').classList.add('hide');
+            document.querySelector('#range-section-2').classList.add('hide');
+            document.querySelector('#range-section-3').classList.add('hide');
+
+            //this
+            document.querySelector('#range-section-4').classList.add('active');
+            document.querySelector('#range-section-4').classList.remove('hide');
+
+
+            document.querySelectorAll('.normalbtn').forEach((item) => {
+                item.classList.remove('normal');
             })
         }
     })
 })
 
 
+// Copy Button
+copy.addEventListener('click', () => {
+    copy.innerHTML = 'Copied!';
+    setTimeout(() => {
+        copy.innerHTML = 'Copy';
+    }, 1200)
+
+
+
+})
+
 
 
 // ALL BORDERS
 function allBorder(degrees){
     console.log(degrees)
-    document.querySelectorAll(".all-variable").forEach(function(item){
+    document.querySelectorAll(".all-variable").forEach((item) => {
         item.innerHTML = degrees + 'px';
         caixa.style.borderRadius = degrees + 'px';
     })
 }
-
 
 // 2X
 function diagonalBorders1(degrees){
@@ -67,7 +112,6 @@ function diagonalBorders1(degrees){
     document.getElementById('top-left').innerHTML = degrees + 'px';
     document.getElementById('bottom-right').innerHTML = degrees + 'px';
 }
-
 function diagonalBorders2(degrees){
     caixa.style.borderTopRightRadius = degrees + 'px';
     caixa.style.borderBottomLeftRadius = degrees + 'px';
@@ -80,17 +124,14 @@ function topLeft(degrees){
     caixa.style.borderTopLeftRadius = degrees + 'px';
     document.getElementById('top-left').innerHTML = degrees + 'px';
 }
-
 function topRight(degrees){
     caixa.style.borderTopRightRadius = degrees + 'px';
     document.getElementById('top-right').innerHTML = degrees + 'px';
 }
-
 function botLeft(degrees){
     caixa.style.borderBottomLeftRadius = degrees + 'px';
     document.getElementById('bottom-left').innerHTML = degrees + 'px';
 }
-
 function botRight(degrees){
     caixa.style.borderBottomRightRadius = degrees + 'px';
     document.getElementById('bottom-right').innerHTML = degrees + 'px';
