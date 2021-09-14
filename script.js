@@ -1,3 +1,4 @@
+let caixa = document.getElementById('display-box')
 
 document.querySelectorAll('.header-section').forEach(function(item){
     item.addEventListener('click', (e) => {
@@ -12,24 +13,42 @@ document.querySelectorAll('.header-section').forEach(function(item){
             document.querySelector('#range-section-1').classList.remove('inactive');
             document.querySelector('#range-section-2').classList.add('inactive');
             document.querySelector('#range-section-3').classList.add('inactive');
+
+            caixa.style.borderRadius = 0;
+
+            document.querySelectorAll('.all-variable').forEach(function(item){
+                item.innerHTML = '0px';
+            })
         }
         else if(item.id === 'header-section-2'){
             document.querySelector('#range-section-1').classList.add('inactive');
             document.querySelector('#range-section-2').classList.add('active2');
             document.querySelector('#range-section-2').classList.remove('inactive');
             document.querySelector('#range-section-3').classList.add('inactive');
+
+            caixa.style.borderRadius = 0;
+
+            document.querySelectorAll('.all-variable').forEach(function(item){
+                item.innerHTML = '0px';
+            })
         }
         else if(item.id === 'header-section-3'){
             document.querySelector('#range-section-1').classList.add('inactive');
             document.querySelector('#range-section-2').classList.add('inactive');
             document.querySelector('#range-section-3').classList.remove('inactive');
             document.querySelector('#range-section-3').classList.add('active2');
+            
+            caixa.style.borderRadius = 0;
+
+            document.querySelectorAll('.all-variable').forEach(function(item){
+                item.innerHTML = '0px';
+            })
         }
     })
 })
 
 
-let caixa = document.getElementById('display-box')
+
 
 // ALL BORDERS
 function allBorder(degrees){
